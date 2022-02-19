@@ -1,3 +1,9 @@
+<?php include 'config.php'?>
+<?php include 'function.php'?>
+<?php
+// Start the session
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,41 +11,25 @@
 		Products
 	</title>
 	<link href="style.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
    <?php include('header.php');?>
 	<div id="main">
+	
 		<div id="products">
-			<div id="product-101" class="product">
-				<img src="images/football.png">
-				<h3 class="title"><a href="#">Product 101</a></h3>
-				<span>Price: $150.00</span>
-				<a class="add-to-cart" href="#">Add To Cart</a>
-			</div>
-			<div id="product-101" class="product">
-				<img src="images/tennis.png">
-				<h3 class="title"><a href="#">Product 102</a></h3>
-				<span>Price: $120.00</span>
-				<a class="add-to-cart" href="#">Add To Cart</a>
-			</div>
-			<div id="product-101" class="product">
-				<img src="images/basketball.png">
-				<h3 class="title"><a href="#">Product 103</a></h3>
-				<span>Price: $90.00</span>
-				<a class="add-to-cart" href="#">Add To Cart</a>
-			</div>
-			<div id="product-101" class="product">
-				<img src="images/table-tennis.png">
-				<h3 class="title"><a href="#">Product 104</a></h3>
-				<span>Price: $110.00</span>
-				<a class="add-to-cart" href="#">Add To Cart</a>
-			</div>
-			<div id="product-101" class="product">
-				<img src="images/soccer.png">
-				<h3 class="title"><a href="#">Product 105</a></h3>
-				<span>Price: $80.00</span>
-				<a class="add-to-cart" href="#">Add To Cart</a>
-			</div>
+		<?php //product listing 
+		productlisting($products);
+		?>
+		</div>
+		<div id="cart">
+			
+		<form action="cart.php" method="post">
+		<input type="submit" name="name" style="font-size:24px" value="viewcart"><i class="fa fa-shopping-cart" style="font-size:48px"></i></input>
+	   </form>
+       </div>
+
+
 		</div>
 	</div>
 	<?php include('footer.php');?>
